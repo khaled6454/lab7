@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Header Color</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 id="headerText">Hello</h1>
+    </div>
+    <form id="colorForm">
+        <label for="colorInput">Enter a color :</label>
+        <input type="text" id="colorInput" name="colorInput" required>
+        <button type="submit">Change Color</button>
+    </form>
+
+    <script>
+        document.getElementById('colorForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from causing a page reload.
+            var color = document.getElementById('colorInput').value;
+            document.getElementById('headerText').style.color = color;
+        });
+    </script>
+</body>
+</html>
